@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px){
+   
+.border{
+    border: solid 1px black;
+}
+
+.icono{
+    width: 40px;  
+  }
+
+    span{
+        color: orange;
+        background-color: bisque;
+        margin: 5px;
+        padding: 5px 25px;
+        border-radius: 4px;
+        text-decoration: none; 
+	    text-align: center;
+        
+    }
+    span:hover{
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#A8E0F0), to(#35A3C5));
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .gradiente{
+        background: linear-gradient(to right, rgb(255, 187, 0) 10%, rgb(124, 209, 191) 90%);
+    }
+
+nav, #productos, #servicios, aside {
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+header{
+background-color: #4949a5;
+}
+
+footer{
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    }
+
+article{
+    margin: 5px;
+    padding: 7px;
+    text-align: center;
+}
+.articulo{
+    width: 200px;
+    }
+
+    #contenido2{
+        width: 620px;
+        height: 330px;
+        background-color: #FFFFFF;
+        margin-left: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        float: left;
+        }
+
+        div{
+            width:100px;
+            height:100px;
+            background-color: grey;
+        }
+        
+        .transicion{
+            transition: all 1s;
+        }
+        
+        .transicion:hover{
+        width:100%;
+        height:500px;
+        background-image: url(https://blogsterapp.com/wp-content/uploads/2018/12/programas-de-dise%C3%B1o-grafico-para-negocios-online.png);
+        border: solid 10px black
+        }
+        
+        
+        .mover{
+            transform: translateX(400px);
+        }
+        
+        
+        .girar{
+            background-image: url(https://media.istockphoto.com/photos/graphic-designer-drawing-on-graphics-tablet-at-workplace-picture-id1056564406?k=20&m=1056564406&s=612x612&w=0&h=RbS8r6aeK9h7elNHapA9bsjdnO7gp2uFrRuxN9cwrIk=);
+            background-size: cover;
+            transform: rotate(40deg);
+        }
+        
+        .textoAnimado{
+        animation-name: texto;
+        animation-duration: 5s;
+        }
+        
+        .cajaAnimada{
+        animation-name: caja;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        }
+        
+        @keyframes texto{
+        from {
+            transform: translateX(1000px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        }
+        
+        @keyframes caja{
+        0%{
+            border-radius: 50%;
+        }
+        100%{
+            border-radius: 20%;
+        }
+        }
+
+/*grid areas*/
+
+#grid-area{
+    display: grid;
+    grid-template-areas: 
+   "menu cabeza cabeza"
+   "menu productos lateral"
+   "menu servicios lateral"
+   "menu pie pie"
+    ;
+    grid-template-columns: 20% auto 15%;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+
+grid-column-gap: 5px;
+grid-row-gap: 5px;
+
+}
+
+
+header {
+    grid-area: cabeza;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer {
+    grid-area: pie;
+    }
+
+#productos {
+    grid-area: productos;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+#servicios {
+    grid-area: servicios;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+nav {
+    grid-area: menu;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+aside {
+    grid-area: lateral;
+}
+}
+
+/*TABLET*/
+@media (min-width: 481) and (max-width: 1023px) {
+            .border{
+            border: solid 1px black;
+        }
+        
+        .icono{
+            width: 50px;  
+          }
+        
+            span{
+                color: orange;
+                background-color: bisque;
+                margin: 5px;
+                padding: 5px 25px;
+                border-radius: 4px;
+            }
+            span:hover{
+                background-color: #090986;
+                cursor: pointer;
+            }
+        
+        
+        
+        header, nav, #productos, #servicios, aside, footer{
+            padding: 10px;
+            background-color: #3636f8;
+        }
+        
+        article{
+            margin: 5px;
+            padding: 7px;
+            text-align: center;
+        }
+        .articulo{
+            width: 200px;
+            }
+        
+        /*grid areas*/
+        
+        #grid-area{
+            display: grid;
+            grid-template-areas: 
+           "cabeza cabeza"
+           "menu menu"
+           "productos productos"
+           "servicios servicios"
+           "pie pie"
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr 3fr 3fr 1fr;
+        
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        
+        }
+        
+        
+        header {
+            grid-area: cabeza;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        
+        footer {
+            grid-area: pie;
+        }
+        
+        #productos {
+            grid-area: productos;
+        }
+        
+        #servicios {
+            grid-area: servicios;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        }
+        
+        nav {
+            grid-area: menu;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        
+        aside {
+            grid-area: lateral;
+        }
+
+}
+
+
+
+/*SMARTPHONE*/
+@media (max-width: 480px){
+
+    .border{
+        border: solid 1px black;
+    }
+    
+    .icono{
+        width: 50px;  
+      }
+    
+        span{
+            color: orange;
+            background-color: bisque;
+            margin: 5px;
+            padding: 5px 25px;
+            border-radius: 4px;
+        }
+        span:hover{
+            background-color: #090986;
+            cursor: pointer;
+        }
+    
+    
+    
+    header, nav, #productos, #servicios, aside, footer{
+        padding: 10px;
+        background-color: #3636f8;
+    }
+    
+    article{
+        margin: 5px;
+        padding: 7px;
+        text-align: center;
+    }
+    .articulo{
+        width: 200px;
+        }
+    
+    /*grid areas*/
+    
+    #grid-area{
+        display: grid;
+        grid-template-areas: 
+       "cabeza"
+       "menu"
+       "productos"
+       "servicios"
+       "pie"
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 3fr 3fr 1fr;
+    
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    
+    }
+    
+    
+    header {
+        grid-area: cabeza;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    
+    footer {
+        grid-area: pie;
+    }
+    
+    #productos {
+        grid-area: productos;
+    }
+    
+    #servicios {
+        grid-area: servicios;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    
+    nav {
+        grid-area: menu;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    
+    aside {
+        grid-area: lateral;
+    }
+}
+
